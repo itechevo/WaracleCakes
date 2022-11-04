@@ -20,13 +20,15 @@ class CakeRepositoryImpl(
 
     override suspend fun getCakes(): Flow<NetworkResult<List<Cake>>> = flow {
         try {
+            //emit if we have cached response
             cache[CAKE_CACHE_KEY]?.let { result ->
                 emit(result)
             }
 
+            //request api response
             val cakes = waracleApiService.getCakes().map { it.toDomain() }
-            val result = NetworkResult.Success(cakes)
 
+            val result = NetworkResult.Success(cakes)
             cache.put(CAKE_CACHE_KEY, result)
 
             emit(result)
@@ -34,7 +36,6 @@ class CakeRepositoryImpl(
             emit(NetworkResult.Error(t))
         }
     }.flowOn(dispatcher)
-
 
     companion object {
         private const val CAKE_CACHE_KEY = "cake_cache_key"

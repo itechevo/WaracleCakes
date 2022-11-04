@@ -29,10 +29,10 @@ class CakeRepositoryImplTest {
 
     private val apiResponse =
         listOf(
-            CakeResponse("Title 1", "Desc 1", "URL 1"),
-            CakeResponse("Title 2", "Desc 2", "URL 2"),
-            CakeResponse("Title 3", "Desc 3", "URL 3"),
-            CakeResponse("Title 4", "Desc 4", "URL 4"),
+            CakeResponse("A 1", "Desc 1", "URL 1"),
+            CakeResponse("B 2", "Desc 2", "URL 2"),
+            CakeResponse("C 3", "Desc 3", "URL 3"),
+            CakeResponse("D 4", "Desc 4", "URL 4")
         )
 
     @Test
