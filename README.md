@@ -12,7 +12,7 @@ Package modularisation for clean code structure, DATA (Repositories), DOMAIN(Use
 
 Kept UI to minimal.
 
-Added unit and UI tests using MockK.
+Added unit test using MockK on repository, usecases and view model.
 
 ## TODO
 
@@ -23,4 +23,5 @@ Due to time constrain, not done the following:
 * Add styles and attributes to support light/dark mode
 * Custom error handling and show error using error screen, currently using simple Snackbar
 * Optimise recycle view update with DiffUtil
+* Splash screen using Launcher Theme
 * UI test using Espresso
